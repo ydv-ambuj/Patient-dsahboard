@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Patient healthcare dashboard"
+    >
+
+    <title>Patient Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="topbar">
+
+        <div class="logo">
+            <span>Tech</span><strong>.Care</strong>
+        </div>
+
+
+        <nav
+            class="top-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a href="#">
+                Overview
+            </a>
+
+            <a
+                href="#"
+                class="active"
+            >
+                Patients
+            </a>
+
+            <a href="#">
+                Schedule
+            </a>
+
+            <a href="#">
+                Message
+            </a>
+
+            <a href="#">
+                Transactions
+            </a>
+
+        </nav>
+
+
+        <div class="doctor-profile">
+
+            <div class="doctor-avatar">
+
+                <div class="doctor-placeholder">
+                    DS
+                </div>
+
+            </div>
+
+
+            <div class="doctor-info">
+
+                <strong>
+                    Dr. Jose Simmons
+                </strong>
+
+                <span>
+                    General Practitioner
+                </span>
+
+            </div>
+
+
+            <button
+                class="settings-btn"
+                type="button"
+                aria-label="Settings"
+            >
+                ⚙
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         DASHBOARD
+    ====================================================== -->
+
+    <main class="dashboard">
+
+
+        <!-- =================================================
+             PATIENT SIDEBAR
+        ================================================== -->
+
+        <aside class="patients-sidebar">
+
+            <div class="sidebar-title">
+
+                <h2>
+                    Patients
+                </h2>
+
+                <button
+                    type="button"
+                    class="search-btn"
+                    aria-label="Search patients"
+                >
+                    🔍
+                </button>
+
+            </div>
+
+
+            <div id="patients-list">
+                <!-- Jessica Taylor is inserted by JavaScript -->
+            </div>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <section class="main-content">
+
+
+            <div class="page-heading">
+
+                <h1>
+                    Diagnosis History
+                </h1>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 BLOOD PRESSURE
+            ============================================== -->
+
+            <section class="blood-pressure-section">
+
+                <div class="blood-pressure-header">
+
+                    <h2>
+                        Blood Pressure
+                    </h2>
+
+
+                    <select
+                        id="time-range"
+                        aria-label="Blood pressure time range"
+                    >
+
+                        <option>
+                            Last 6 months
+                        </option>
+
+                        <option>
+                            Last year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="chart-container">
+
+                    <canvas
+                        id="bloodPressureChart"
+                        aria-label="Blood pressure history chart"
+                    ></canvas>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 VITAL CARDS
+            ============================================== -->
+
+            <section
+                class="vital-cards"
+                aria-label="Patient vital signs"
+            >
+
+
+                <article class="vital-card respiratory-card">
+
+                    <div class="vital-icon">
+                        🫁
+                    </div>
+
+                    <h3>
+                        Respiratory Rate
+                    </h3>
+
+                    <strong id="respiratory-rate">
+                        --
+                    </strong>
+
+                    <span>
+                        BPM
+                    </span>
+
+                    <p id="respiratory-status">
+                        --
+                    </p>
+
+                </article>
+
+
+
+                <article class="vital-card temperature-card">
+
+                    <div class="vital-icon">
+                        🌡
+                    </div>
+
+                    <h3>
+                        Temperature
+                    </h3>
+
+                    <strong id="temperature">
+                        --
+                    </strong>
+
+                    <span>
+                        °F
+                    </span>
+
+                    <p id="temperature-status">
+                        --
+                    </p>
+
+                </article>
+
+
+
+                <article class="vital-card heart-card">
+
+                    <div class="vital-icon">
+                        ❤️
+                    </div>
+
+                    <h3>
+                        Heart Rate
+                    </h3>
+
+                    <strong id="heart-rate">
+                        --
+                    </strong>
+
+                    <span>
+                        BPM
+                    </span>
+
+                    <p id="heart-status">
+                        --
+                    </p>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 DIAGNOSTIC LIST
+            ============================================== -->
+
+            <section class="diagnostic-section">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Diagnostic List
+                    </h2>
+
+                </div>
+
+
+                <div class="diagnostic-table">
+
+                    <div class="diagnostic-row diagnostic-header">
+
+                        <span>
+                            Problem/Diagnosis
+                        </span>
+
+                        <span>
+                            Description
+                        </span>
+
+                        <span>
+                            Status
+                        </span>
+
+                    </div>
+
+
+                    <div id="diagnostic-list">
+                        <!-- API data inserted here -->
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+
+        <aside class="patient-details">
+
+
+            <!-- =============================================
+                 PATIENT PROFILE
+            ============================================== -->
+
+            <section class="profile-card">
+
+                <img
+                    id="profile-image"
+                    class="profile-image"
+                    src=""
+                    alt="Jessica Taylor"
+                >
+
+
+                <h2 id="profile-name">
+                    Jessica Taylor
+                </h2>
+
+
+                <div class="profile-detail">
+
+                    <span class="detail-label">
+                        Date Of Birth
+                    </span>
+
+                    <strong id="date-of-birth">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span class="detail-label">
+                        Gender
+                    </span>
+
+                    <strong id="gender">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span class="detail-label">
+                        Contact Info.
+                    </span>
+
+                    <strong id="phone">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span class="detail-label">
+                        Emergency Contacts
+                    </span>
+
+                    <strong id="emergency-contact">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div class="profile-detail">
+
+                    <span class="detail-label">
+                        Insurance Provider
+                    </span>
+
+                    <strong id="insurance">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="show-info-btn"
+                    type="button"
+                >
+                    Show All Information
+                </button>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 LAB RESULTS
+            ============================================== -->
+
+            <section class="lab-results">
+
+                <div class="section-heading">
+
+                    <h2>
+                        Lab Results
+                    </h2>
+
+                </div>
+
+
+                <div id="lab-results-list">
+                    <!-- API data inserted here -->
+                </div>
+
+            </section>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         EXTERNAL LIBRARY
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <!-- =====================================================
+         APPLICATION FILES
+    ====================================================== -->
+
+    <script src="./js/api.js"></script>
+
+    <script src="./js/chart.js"></script>
+
+    <script src="./js/app.js"></script>
+
+
+</body>
+
+</html>

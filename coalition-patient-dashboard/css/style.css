@@ -1,0 +1,906 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f6;
+    color: #072635;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.topbar {
+    min-height: 64px;
+    margin: 8px;
+    padding: 0 24px;
+    background: #ffffff;
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #072635;
+}
+
+.logo strong {
+    color: #0b8278;
+}
+
+
+/* Navigation */
+
+.top-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.top-navigation a {
+    text-decoration: none;
+    color: #072635;
+
+    font-size: 12px;
+    padding: 8px 12px;
+    border-radius: 20px;
+
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+.top-navigation a.active {
+    color: #072635;
+    font-weight: 700;
+    background: #e6f4f3;
+}
+
+
+/* Doctor */
+
+.doctor-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.doctor-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-avatar img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.doctor-placeholder {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dbe5e5;
+    color: #0f766e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+}
+
+.doctor-info strong {
+    font-size: 14px;
+}
+
+.doctor-info span {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.settings-btn {
+    font-size: 20px;
+    margin-left: 6px;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        200px
+        minmax(0, 1fr)
+        230px;
+
+    gap: 16px;
+
+    margin: 0 8px 24px;
+}
+
+
+/* =========================================================
+   LEFT PATIENT SIDEBAR
+========================================================= */
+
+.patients-sidebar {
+    background: #ffffff;
+    border-radius: 10px;
+
+    min-height: 750px;
+
+    padding: 18px;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.sidebar-title h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.search-btn {
+    font-size: 18px;
+}
+
+
+/* Patient */
+
+.patient-item {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+    background: #eef7f7;
+
+    margin-bottom: 8px;
+}
+
+.patient-item img {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 50%;
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+.patient-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.patient-item strong {
+    font-size: 13px;
+}
+
+.patient-item span {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    min-width: 0;
+}
+
+.page-heading {
+    margin-bottom: 10px;
+}
+
+.page-heading h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #072635;
+}
+
+
+/* =========================================================
+   BLOOD PRESSURE
+========================================================= */
+
+.blood-pressure-section {
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    margin-bottom: 14px;
+}
+
+.blood-pressure-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.blood-pressure-header h2 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.blood-pressure-header select {
+    border: none;
+    background: transparent;
+
+    color: #6b7280;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.chart-container {
+    position: relative;
+
+    height: 245px;
+    width: 100%;
+}
+
+
+/* =========================================================
+   VITAL CARDS
+========================================================= */
+
+.vital-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+.vital-card {
+    border-radius: 10px;
+
+    padding: 18px;
+
+    min-height: 145px;
+}
+
+.respiratory-card {
+    background: #dff3ff;
+}
+
+.temperature-card {
+    background: #fff3c4;
+}
+
+.heart-card {
+    background: #fce5f2;
+}
+
+.vital-icon {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.vital-card h3 {
+    font-size: 14px;
+    color: #374151;
+
+    margin-bottom: 10px;
+}
+
+.vital-card strong {
+    font-size: 28px;
+    display: block;
+}
+
+.vital-card span {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.vital-card p {
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    color: #4b5563;
+}
+
+
+/* =========================================================
+   COMMON SECTIONS
+========================================================= */
+
+.diagnostic-section,
+.lab-results,
+.profile-card {
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 22px;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   DIAGNOSTIC TABLE
+========================================================= */
+
+.diagnostic-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.diagnostic-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        2fr
+        1fr;
+
+    gap: 20px;
+
+    padding: 12px 10px;
+
+    border-bottom: 1px solid #e1e6e8;
+
+    font-size: 12px;
+
+    min-width: 560px;
+}
+
+.diagnostic-header {
+    font-weight: 700;
+
+    background: #f7f9fa;
+
+    border-radius: 6px;
+
+    color: #072635;
+}
+
+
+/* =========================================================
+   RIGHT SIDEBAR
+========================================================= */
+
+.patient-details {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    min-width: 0;
+}
+
+.profile-card {
+    text-align: center;
+}
+
+.profile-image {
+    width: 88px;
+    height: 88px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    margin-bottom: 10px;
+}
+
+.profile-card h2 {
+    font-size: 17px;
+
+    margin-bottom: 22px;
+}
+
+.profile-detail {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    text-align: left;
+
+    margin-bottom: 18px;
+}
+
+.detail-label {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    min-width: 90px;
+}
+
+.profile-detail strong {
+    font-size: 12px;
+
+    word-break: break-word;
+}
+
+.show-info-btn {
+    width: 100%;
+
+    background: #0f766e;
+
+    color: #ffffff;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   LAB RESULTS
+========================================================= */
+
+#lab-results-list {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 5px;
+}
+
+.lab-result {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #e1e6e8;
+
+    font-size: 12px;
+}
+
+.download-btn {
+    font-size: 18px;
+
+    color: #374151;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   EMPTY / LOADING
+========================================================= */
+
+.empty-message {
+    color: #6b7280;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.loading {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 200px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .dashboard {
+        grid-template-columns:
+            180px
+            minmax(0, 1fr)
+            210px;
+
+        gap: 12px;
+    }
+
+    .top-navigation {
+        gap: 10px;
+    }
+
+    .top-navigation a {
+        padding: 7px 9px;
+        font-size: 11px;
+    }
+
+    .vital-card {
+        padding: 14px;
+    }
+
+    .profile-detail {
+        gap: 6px;
+    }
+
+    .detail-label {
+        min-width: 75px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .topbar {
+        padding: 0 16px;
+        gap: 10px;
+    }
+
+    .top-navigation {
+        gap: 4px;
+    }
+
+    .top-navigation a {
+        font-size: 10px;
+        padding: 7px 8px;
+    }
+
+    .dashboard {
+        grid-template-columns:
+            170px
+            minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+    .patient-details {
+        grid-column: 1 / -1;
+
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .patients-sidebar {
+        min-height: 650px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET / LARGE MOBILE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .topbar {
+        min-height: 60px;
+
+        padding: 10px 14px;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .doctor-profile {
+        margin-left: auto;
+    }
+
+    .top-navigation {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding-bottom: 3px;
+
+        scrollbar-width: none;
+    }
+
+    .top-navigation::-webkit-scrollbar {
+        display: none;
+    }
+
+    .top-navigation a {
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+
+    /* Dashboard */
+
+    .dashboard {
+        display: flex;
+
+        flex-direction: column;
+
+        margin: 0 5px 20px;
+
+        gap: 10px;
+    }
+
+
+    /* Patient sidebar */
+
+    .patients-sidebar {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 14px;
+    }
+
+
+    /* Main */
+
+    .main-content {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .page-heading h1 {
+        font-size: 18px;
+    }
+
+
+    /* Chart */
+
+    .blood-pressure-section {
+        padding: 14px;
+
+        overflow: hidden;
+    }
+
+    .blood-pressure-header {
+        flex-wrap: wrap;
+
+        gap: 8px;
+
+        margin-bottom: 12px;
+    }
+
+    .chart-container {
+        height: 220px;
+
+        width: 100%;
+    }
+
+
+    /* Vitals */
+
+    .vital-cards {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .vital-card {
+        min-height: 120px;
+    }
+
+
+    /* Diagnostic */
+
+    .diagnostic-section {
+        overflow: hidden;
+
+        padding: 16px;
+    }
+
+    .diagnostic-table {
+        overflow-x: auto;
+    }
+
+    .diagnostic-row {
+        min-width: 560px;
+    }
+
+
+    /* Right sidebar */
+
+    .patient-details {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .profile-card,
+    .lab-results {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .topbar {
+        margin: 5px;
+
+        align-items: center;
+    }
+
+    .doctor-info {
+        display: none;
+    }
+
+    .settings-btn {
+        margin-left: 0;
+    }
+
+
+    .blood-pressure-section {
+        padding: 12px;
+    }
+
+    .blood-pressure-header h2 {
+        font-size: 14px;
+    }
+
+    .blood-pressure-header select {
+        font-size: 11px;
+    }
+
+    .chart-container {
+        height: 210px;
+    }
+
+
+    .vital-card {
+        padding: 16px;
+    }
+
+
+    .diagnostic-section {
+        padding: 14px;
+    }
+
+    .section-heading h2 {
+        font-size: 16px;
+    }
+
+
+    .profile-card,
+    .lab-results {
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .top-navigation {
+        gap: 2px;
+    }
+
+    .top-navigation a {
+        padding: 6px;
+
+        font-size: 10px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .doctor-placeholder {
+        width: 38px;
+        height: 38px;
+    }
+
+    .diagnostic-row {
+        min-width: 520px;
+    }
+}
